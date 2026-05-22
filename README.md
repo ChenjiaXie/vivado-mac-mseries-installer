@@ -7,7 +7,7 @@ This is a refined, automated tool for installing [Vivado™](https://www.xilinx.
 This repository is a clean, enhanced fork based on the original work by [ichi4096/vivado-on-silicon-mac](https://github.com/ichi4096/vivado-on-silicon-mac).
 
 ## Features & Improvements
-* **Full M-Series Support**: Tested and optimized for M1, M2, M3, **M4**, and upcoming **M5** chips.
+* **Full M-Series Support**: Tested and optimized for M1, M2, M3, **M4**, and the latest **M5** chips.
 * **Offline Installer Support**: Automatically detects and extracts massive `.tar` offline installers (Single File Download), bypassing the need to authenticate with AMD servers via terminal and saving massive network wait times.
 * **Fully Automated CLI Installation**: Removed tedious interactive prompts (e.g., manual EULA agreement, resolution prompts, file drag-and-drop) for a true "run-and-forget" silent install experience.
 * **Updated Component Configurations**: Removed deprecated components (like Vitis Model Composer) that break the 2025.x installer.
