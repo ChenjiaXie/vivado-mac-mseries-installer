@@ -54,6 +54,7 @@ vivado -mode tcl
 ```
 
 ## 📜 鸣谢与开源协议
+* **项目维护者**: [ChenjiaXie](https://github.com/ChenjiaXie)
 * **原项目作者**: [ichi4096](https://github.com/ichi4096/vivado-on-silicon-mac)
 * 本仓库内容基于 Creative Commons Zero v1.0 Universal (CC0 1.0) 协议开源。
 * Apple, Mac, Rosetta, Docker, AMD, Xilinx, 以及 Vivado 均为其各自所有者的注册商标。

@@ -53,6 +53,7 @@ vivado -mode tcl
 ```
 
 ## Credits & License
+* **Maintainer**: [ChenjiaXie](https://github.com/ChenjiaXie)
 * **Original Author**: [ichi4096](https://github.com/ichi4096/vivado-on-silicon-mac)
 * The repository's contents are licensed under the Creative Commons Zero v1.0 Universal license.
 * Apple, Mac, Rosetta, Docker, AMD, Xilinx, and Vivado are trademarks of their respective owners.
