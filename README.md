@@ -1,5 +1,7 @@
 # Vivado on Apple Silicon Mac (M1/M2/M3/M4/M5)
 
+[中文说明](README_zh-CN.md)
+
 This is a refined, automated tool for installing [Vivado™](https://www.xilinx.com/support/download/index.html) on Arm®-based Apple Silicon Macs (including the latest M4 and M5 chips) in a Rosetta-enabled virtual machine. 
 
 This repository is a clean, enhanced fork based on the original work by [ichi4096/vivado-on-silicon-mac](https://github.com/ichi4096/vivado-on-silicon-mac).
