@@ -1,4 +1,4 @@
-# Vivado on Apple Silicon Mac (M1/M2/M3/M4/M5)
+# Vivado on Mac M-Series (Auto-Installer)
 
 [中文说明](README_zh-CN.md)
 

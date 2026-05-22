@@ -1,4 +1,4 @@
-# Vivado on Apple Silicon Mac (M1/M2/M3/M4/M5)
+# Vivado on Mac M-Series (Auto-Installer)
 
 这是一个经过深度优化和自动化重构的工具，用于在基于 Arm 架构的 Apple Silicon Mac（全面支持最新的 **M4** 和 **M5** 芯片）上，借助 Rosetta 2 翻译层和 Docker 虚拟化技术安装和运行 [Vivado™](https://www.xilinx.com/support/download/index.html)。
 
