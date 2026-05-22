@@ -11,6 +11,8 @@ This repository is a clean, enhanced fork based on the original work by [ichi409
 * **Offline Installer Support**: Automatically detects and extracts `.tar` offline installers (Single File Download), bypassing terminal authentication and network downloads.
 * **Automated Installation**: Removed interactive prompts (e.g., EULA agreement, resolution prompts) for a silent install process.
 * **Updated Component Configurations**: Removed deprecated components (e.g., Vitis Model Composer) for compatibility with the 2025.x installer.
+* **Versal Device Support**: Default config now includes `xcv80` (Versal Premium for Alveo V80). Additional devices can be added post-install via `add_devices.sh`.
+* **Add Devices Post-Install**: New `add_devices.sh` script allows adding device families to an existing installation without reinstalling.
 
 ## Supported Versions
 * 2025.2, 2025.1
@@ -23,7 +25,7 @@ This repository is a clean, enhanced fork based on the original work by [ichi409
 ### 1. Preparations
 1. Install [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/). **Crucial:** You must choose the "Apple Chip" version.
 2. In Docker Settings -> General / Features in development, **ENABLE "Use Rosetta for x86/amd64 emulation on Apple Silicon"**.
-3. In Docker Settings -> Resources, allocate at least **8GB RAM** (12GB+ recommended).
+3. In Docker Settings -> Resources, allocate at least **8GB RAM** (16GB+ recommended for Versal/CIPS designs).
 4. Download the Vivado Installer from AMD (Either the Linux Self-Extracting `.bin` Web Installer OR the `.tar` Offline Single File Download).
 
 ### 2. Installation
@@ -51,6 +53,20 @@ docker exec -it vivado_container bash
 source /home/user/Xilinx/Vivado/2025.2/settings64.sh
 vivado -mode tcl
 ```
+
+### 5. Adding Device Families Post-Install
+If you need additional FPGA devices (e.g., Versal, Spartan UltraScale+) that were not included in the initial installation:
+```bash
+# List all available devices
+./scripts/add_devices.sh
+
+# Add a specific device (e.g., Versal Premium for Alveo V80)
+./scripts/add_devices.sh xcv80
+
+# Add Versal AI Edge
+./scripts/add_devices.sh xcve2302
+```
+This uses Vivado's built-in incremental installer (`.xinstall/xsetup -b Add`) — no need to download or reinstall the entire tool. Takes ~5-15 minutes per device family.
 
 ## Credits & License
 * **Maintainer**: [ChenjiaXie](https://github.com/ChenjiaXie)

@@ -11,6 +11,8 @@
 * **支持离线安装包 (.tar)**：支持自动识别并提取 `.tar` 离线安装包（Single File Download），无需通过终端进行 AMD 账号联网鉴权。
 * **自动化静默安装**：简化了交互流程（去除了手动同意 EULA、设置分辨率等步骤），通过脚本执行后台安装。
 * **更新组件配置**：移除了 2025.x 等版本安装包中已弃用的组件（如 Vitis Model Composer），修复了解析报错问题。
+* **Versal 器件支持**：默认配置已包含 `xcv80`（Versal Premium，适用于 Alveo V80 加速卡）。其他器件可通过 `add_devices.sh` 后续添加。
+* **增量添加器件**：新增 `add_devices.sh` 脚本，支持向已有安装中添加器件族，无需重新安装。
 
 ## 📦 支持的 Vivado 版本
 * 2025.2, 2025.1
@@ -23,7 +25,7 @@
 ### 1. 准备工作
 1. 安装 [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/)。**注意：** 下载时务必选择 "Apple Chip"（苹果芯片）版本。
 2. 打开 Docker 设置 -> `General`（或 `Features in development`），**务必勾选开启 "Use Rosetta for x86/amd64 emulation on Apple Silicon"**。
-3. 打开 Docker 设置 -> `Resources`，将 Memory（内存）至少分配 **8GB**（强烈推荐 12GB 或更高）。
+3. 打开 Docker 设置 -> `Resources`，将 Memory（内存）至少分配 **8GB**（Versal/CIPS 设计强烈推荐 16GB 或更高）。
 4. 前往 AMD 官网下载 Vivado 安装包（可以是 `.bin` 格式的在线安装器，也可以是上百G的 `.tar` 离线完整安装包）。
 
 ### 2. 开始安装
@@ -52,6 +54,20 @@ source /home/user/Xilinx/Vivado/2025.2/settings64.sh
 # 之后即可无界面运行 Vivado
 vivado -mode tcl
 ```
+
+### 5. 安装后追加器件族
+如果初始安装中未包含你需要的 FPGA 器件（如 Versal、Spartan UltraScale+ 等），可以通过以下命令增量添加：
+```bash
+# 查看所有可用器件
+./scripts/add_devices.sh
+
+# 添加指定器件（例如 Alveo V80 所需的 Versal Premium）
+./scripts/add_devices.sh xcv80
+
+# 添加 Versal AI Edge
+./scripts/add_devices.sh xcve2302
+```
+该脚本利用 Vivado 内置的增量安装器（`.xinstall/xsetup -b Add`）——无需重新下载或安装完整工具链。每个器件族耗时约 5-15 分钟。
 
 ## 📜 鸣谢与开源协议
 * **项目维护者**: [ChenjiaXie](https://github.com/ChenjiaXie)

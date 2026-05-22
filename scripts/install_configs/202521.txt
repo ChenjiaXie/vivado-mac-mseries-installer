@@ -7,7 +7,8 @@ Product=Vivado
 Destination=/home/user/Xilinx
 
 # Choose the Products/Devices the you would like to install.
-Modules=Virtex UltraScale+ HBM:1,Kintex UltraScale:1,Vitis Networking P4:0,Artix UltraScale+:1,Spartan-7:1,Artix-7:1,Virtex UltraScale+:1,DocNav:1,Zynq UltraScale+ MPSoC:1,Zynq-7000:1,Virtex UltraScale+ 58G:1,Power Design Manager (PDM):0,Vitis Embedded Development:0,Kintex-7:1,Install Devices for Kria SOMs and Starter Kits:1,Kintex UltraScale+:1
+# Includes: UltraScale+, 7-series, and Versal Premium (xcv80 for Alveo V80)
+Modules=Virtex UltraScale+ HBM:1,Kintex UltraScale:1,Vitis Networking P4:0,Artix UltraScale+:1,Spartan-7:1,Artix-7:1,Virtex UltraScale+:1,DocNav:1,Zynq UltraScale+ MPSoC:1,Zynq-7000:1,Virtex UltraScale+ 58G:1,Power Design Manager (PDM):0,Vitis Embedded Development:0,Kintex-7:1,Install Devices for Kria SOMs and Starter Kits:1,Kintex UltraScale+:1,xcv80:1
 
 # Choose the post install scripts you'd like to run as part of the finalization step. Please note that some of these scripts may require user interaction during runtime.
 InstallOptions=
